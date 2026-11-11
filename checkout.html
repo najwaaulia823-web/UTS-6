@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pemesanan • Bookspace</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="app-shell">
+<aside class="sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark">B</span> bookspace</a>
+    <span class="side-label">MENU UTAMA</span>
+    <nav class="side-nav">
+        <a href="dashboard.html" data-page="dashboard">▦ <span>Dashboard</span></a>
+        <a href="stok.html" data-page="stok">▤ <span>Stok &amp; Katalog</span></a>
+        <a href="checkout.html" data-page="checkout">＋ <span>Pemesanan</span></a>
+        <a href="tracking.html" data-page="tracking">⌁ <span>Tracking</span></a>
+        <a href="dashboard.html#history">◷ <span>Riwayat transaksi</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+        <div class="help-card"><b>Bookspace support</b><p>Kelola koleksi dan pantau pengiriman buku dengan mudah.</p></div>
+        <button class="logout" data-logout>↪ Keluar akun</button>
+    </div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+    <div><span class="eyebrow">BOOKSPACE / ADMINISTRATOR</span><p class="muted small">Sistem informasi katalog dan pemesanan buku</p></div>
+    <div class="user-chip"><span class="avatar">A</span><span><b id="currentUser">Admin Bookspace</b><small>Administrator</small></span></div>
+</header>
+<section class="page-intro"><div><span class="eyebrow">TRANSAKSI / CHECKOUT</span><h1>Pemesanan buku</h1><p class="muted">Lengkapi data pelanggan dan pilih buku yang akan dipesan.</p></div></section>
+<form id="checkoutForm" class="checkout-layout">
+    <div class="checkout-main">
+        <section class="content-card">
+            <div class="section-heading"><div class="step-number">01</div><div class="heading-grow"><span class="eyebrow">INFORMASI PELANGGAN</span><h2>Data penerima</h2></div></div>
+            <div class="form-grid">
+                <div><label for="customerName">Nama lengkap</label><input id="customerName" required placeholder="Nama penerima"></div>
+                <div><label for="customerEmail">Email</label><input id="customerEmail" type="email" required placeholder="nama@email.com"></div>
+                <div><label for="customerPhone">Nomor telepon</label><input id="customerPhone" type="tel" required pattern="[0-9+() -](8, 18)" placeholder="08xxxxxxxxxx"></div>
+                <div><label for="shippingMethod">Ekspedisi</label><select id="shippingMethod"><option>JNE Reguler</option><option>Pos Indonesia</option><option>SiCepat BEST</option></select></div>
+                <div class="full"><label for="customerAddress">Alamat lengkap</label><textarea id="customerAddress" rows="3" required placeholder="Jalan, nomor rumah, kecamatan, kota"></textarea></div>
+                <div class="full"><label for="paymentMethod">Metode pembayaran</label><select id="paymentMethod"><option>Transfer Bank (simulasi)</option><option>COD (simulasi)</option><option>E-Wallet (simulasi)</option></select></div>
+            </div>
+        </section>
+        <section class="content-card">
+            <div class="section-heading"><div class="step-number">02</div><div class="heading-grow"><span class="eyebrow">DAFTAR BELANJA</span><h2>Pilih buku</h2></div></div>
+            <div class="add-item-row"><select id="bookSelect" aria-label="Pilih buku"><option value="">Pilih buku dari katalog</option></select><button class="btn btn-outline" id="addToCart" type="button">＋ Tambahkan</button></div>
+            <div class="table-wrap"><table><thead><tr><th>JUDUL BUKU</th><th>HARGA</th><th>JUMLAH</th><th>SUBTOTAL</th><th></th></tr></thead><tbody id="cartRows"><tr><td colspan="5" class="empty-cell">Belum ada buku di pesanan.</td></tr></tbody></table></div>
+        </section>
+    </div>
+    <aside class="content-card order-summary">
+        <span class="eyebrow">RINGKASAN</span><h2>Detail pembayaran</h2>
+        <div class="summary-line"><span>Subtotal buku</span><b id="subtotalText">Rp0</b></div>
+        <div class="summary-line"><span>Ongkos kirim</span><b id="shippingText">Rp0</b></div>
+        <div class="summary-total"><span>Total</span><strong id="totalText">Rp0</strong></div>
+        <p class="summary-hint">Biaya pengiriman simulasi sebesar Rp15.000 untuk setiap pesanan.</p>
+        <button class="btn btn-primary btn-block" type="submit">Simpan pesanan →</button>
+        <a class="back-link" href="dashboard.html">Kembali ke dashboard</a>
+    </aside>
+</form>
+<footer class="page-footer">Bookspace © 2026 <span>Checkout simulasi tanpa pembayaran nyata</span></footer>
+</main></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk • Bookspace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <main class="auth-layout">
+        <section class="auth-art">
+            <a class="brand brand-light" href="index.html"><span class="brand-mark">B</span> bookspace</a>
+            <div class="art-copy">
+                <span class="eyebrow">RUANG UNTUK SETIAP CERITA</span>
+                <h1>Temukan buku,<br><em>temukan dunia.</em></h1>
+                <p>Kelola katalog, pesanan, dan perjalanan buku dalam satu ruang yang sederhana.</p>
+            </div>
+            <div class="art-books">
+                <div class="book-cover cover-a"><small>BUKU AJAR</small><b>Ilmu<br>Komunikasi</b><span>BOOKSPACE</span></div>
+                <div class="book-cover cover-b"><small>EDISI 03</small><b>Manajemen<br>Keuangan</b><span>BOOKSPACE</span></div>
+                <div class="book-cover cover-c"><small>BUKU AJAR</small><b>Mikro-<br>biologi</b><span>BOOKSPACE</span></div>
+            </div>
+            <div class="art-note">READ · LEARN · GROW</div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-card">
+                <span class="eyebrow">SELAMAT DATANG KEMBALI</span>
+                <h2>Masuk ke Bookspace</h2>
+                <p class="muted">Gunakan akun demo untuk mencoba aplikasi.</p>
+
+                <form id="loginForm">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="nama@email.com" required autocomplete="username">
+
+                    <label for="password">Password</label>
+                    <div class="password-wrap">
+                        <input id="password" type="password" placeholder="Masukkan password" required autocomplete="current-password">
+                        <button class="toggle-pass" type="button" data-toggle-password aria-label="Tampilkan password">◉</button>
+                    </div>
+
+                    <div class="auth-links">
+                        <button class="text-button" type="button" data-modal="forgotModal">Lupa password?</button>
+                        <span>Akun demo tersedia di bawah</span>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Masuk ke dashboard →</button>
+                </form>
+
+                <div class="demo-hint">
+                    <b>Akun admin demo</b><br>
+                    Email: admin@bookspace.id<br>
+                    Password: Buku123!<br><br>
+                    <b>Akun dari data tugas</b><br>
+                    siti@gmail.com / siti123
+                </div>
+            </div>
+            <footer class="auth-footer">Bookspace © 2026 · Aplikasi simulasi pembelajaran</footer>
+        </section>
+    </main>
+
+    <div class="modal" id="forgotModal" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" type="button" data-close aria-label="Tutup">×</button>
+            <span class="eyebrow">BANTUAN AKUN</span>
+            <h3>Reset password</h3>
+            <p class="muted">Masukkan email akun. Fitur ini disimulasikan untuk keperluan demonstrasi.</p>
+            <form id="forgotForm">
+                <label for="forgotEmail">Email</label>
+                <input id="forgotEmail" type="email" required placeholder="nama@email.com">
+                <button class="btn btn-primary btn-block" type="submit">Kirim instruksi</button>
+            </form>
+        </div>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok &amp; Katalog • Bookspace</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body><div class="app-shell">
+<aside class="sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark">B</span> bookspace</a>
+    <span class="side-label">MENU UTAMA</span>
+    <nav class="side-nav">
+        <a href="dashboard.html" data-page="dashboard">▦ <span>Dashboard</span></a>
+        <a href="stok.html" data-page="stok">▤ <span>Stok &amp; Katalog</span></a>
+        <a href="checkout.html" data-page="checkout">＋ <span>Pemesanan</span></a>
+        <a href="tracking.html" data-page="tracking">⌁ <span>Tracking</span></a>
+        <a href="dashboard.html#history">◷ <span>Riwayat transaksi</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+        <div class="help-card"><b>Bookspace support</b><p>Kelola koleksi dan pantau pengiriman buku dengan mudah.</p></div>
+        <button class="logout" data-logout>↪ Keluar akun</button>
+    </div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+    <div><span class="eyebrow">BOOKSPACE / ADMINISTRATOR</span><p class="muted small">Sistem informasi katalog dan pemesanan buku</p></div>
+    <div class="user-chip"><span class="avatar">A</span><span><b id="currentUser">Admin Bookspace</b><small>Administrator</small></span></div>
+</header>
+<section class="page-intro"><div><span class="eyebrow">MANAJEMEN INVENTARIS</span><h1>Stok &amp; Katalog</h1><p class="muted">Kelola daftar buku, harga, kategori, dan ketersediaan stok.</p></div><button class="btn btn-primary" id="openBookForm">＋ Tambah buku</button></section>
+<section class="stats-grid compact-stats">
+    <article class="stat-card"><p>Total judul buku</p><strong id="catalogCount">0</strong></article>
+    <article class="stat-card"><p>Total stok</p><strong id="catalogStock">0</strong></article>
+    <article class="stat-card"><p>Stok menipis (≤ 5)</p><strong id="lowStock">0</strong></article>
+</section>
+<section class="content-card">
+    <div class="toolbar"><label class="search-box"><span>⌕</span><input id="catalogSearch" type="search" placeholder="Cari judul atau penulis..."></label>
+        <select id="categoryFilter" aria-label="Filter kategori"><option value="all">Semua kategori</option><option value="Buku Ajar">Buku Ajar</option></select></div>
+    <div class="table-wrap"><table><thead><tr><th>BUKU</th><th>KODE</th><th>KATEGORI</th><th>HARGA</th><th>STOK</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="catalogRows"></tbody></table></div>
+    <p class="table-note">Perubahan katalog disimpan pada penyimpanan lokal browser (localStorage).</p>
+</section>
+<footer class="page-footer">Bookspace © 2026 <span>Manajemen katalog buku</span></footer>
+</main></div>
+<div class="modal" id="bookModal" aria-hidden="true"><div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Tutup">×</button><span class="eyebrow">FORM KATALOG</span><h3 id="bookModalTitle">Tambah buku baru</h3>
+    <form id="bookForm">
+        <input type="hidden" id="bookId">
+        <div class="form-two">
+            <div><label for="bookCode">Kode buku</label><input id="bookCode" required placeholder="Contoh: ASIP4301"></div>
+            <div><label for="bookEdition">Edisi</label><input id="bookEdition" required placeholder="Contoh: 2"></div>
+            <div class="full"><label for="bookTitle">Judul buku</label><input id="bookTitle" required></div>
+            <div class="full"><label for="bookAuthor">Penulis</label><input id="bookAuthor" required></div>
+            <div><label for="bookCategory">Kategori</label><select id="bookCategory" required><option value="Buku Ajar">Buku Ajar</option><option value="Fiksi">Fiksi</option><option value="Bisnis">Bisnis</option><option value="Pengembangan Diri">Pengembangan Diri</option><option value="Teknologi">Teknologi</option></select></div>
+            <div><label for="bookStock">Stok</label><input id="bookStock" type="number" min="0" required></div>
+            <div class="full"><label for="bookPrice">Harga (rupiah)</label><input id="bookPrice" type="number" min="1000" step="1000" required></div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Simpan buku</button>
+    </form>
+</div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>

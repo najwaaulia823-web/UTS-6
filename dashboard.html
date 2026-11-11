@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard • Bookspace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark">B</span> bookspace</a>
+    <span class="side-label">MENU UTAMA</span>
+    <nav class="side-nav">
+        <a href="dashboard.html" data-page="dashboard">▦ <span>Dashboard</span></a>
+        <a href="stok.html" data-page="stok">▤ <span>Stok &amp; Katalog</span></a>
+        <a href="checkout.html" data-page="checkout">＋ <span>Pemesanan</span></a>
+        <a href="tracking.html" data-page="tracking">⌁ <span>Tracking</span></a>
+        <a href="dashboard.html#history">◷ <span>Riwayat transaksi</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+        <div class="help-card"><b>Bookspace support</b><p>Kelola koleksi dan pantau pengiriman buku dengan mudah.</p></div>
+        <button class="logout" data-logout>↪ Keluar akun</button>
+    </div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+    <div><span class="eyebrow">BOOKSPACE / ADMINISTRATOR</span><p class="muted small">Sistem informasi katalog dan pemesanan buku</p></div>
+    <div class="user-chip"><span class="avatar">A</span><span><b id="currentUser">Admin Bookspace</b><small>Administrator</small></span></div>
+</header>
+<section class="welcome-row">
+    <div><span class="eyebrow">OVERVIEW</span><h1 id="greeting">Selamat datang, Admin!</h1><p class="muted" id="todayDate">Ringkasan aktivitas Bookspace</p></div>
+    <a class="btn btn-primary" href="checkout.html">＋ Buat pesanan</a>
+</section>
+<section class="stats-grid">
+    <article class="stat-card"><span class="stat-icon lavender">▤</span><p>Total judul buku</p><strong id="totalBooks">0</strong><small>Koleksi katalog aktif</small></article>
+    <article class="stat-card"><span class="stat-icon mint">▥</span><p>Total stok tersedia</p><strong id="totalStock">0</strong><small>Akumulasi seluruh buku</small></article>
+    <article class="stat-card"><span class="stat-icon peach">▣</span><p>Total transaksi</p><strong id="totalOrders">0</strong><small>Pesanan tersimpan di browser</small></article>
+    <article class="stat-card"><span class="stat-icon butter">Rp</span><p>Total nilai transaksi</p><strong id="totalRevenue">Rp0</strong><small>Akumulasi transaksi</small></article>
+</section>
+<section class="dashboard-grid">
+    <article class="content-card">
+        <div class="section-heading"><div><span class="eyebrow">PILIHAN KOLEKSI</span><h2>Buku dalam katalog</h2></div><a class="inline-link" href="stok.html">Lihat semua →</a></div>
+        <div id="featuredBooks" class="featured-grid"></div>
+    </article>
+    <article class="content-card quick-card">
+        <span class="eyebrow">AKSES CEPAT</span><h2>Apa yang ingin dilakukan?</h2>
+        <a class="quick-link" href="stok.html"><span class="quick-icon">▤</span><span><b>Kelola katalog</b><small>Tambah, ubah, dan hapus buku</small></span><i>→</i></a>
+        <a class="quick-link" href="checkout.html"><span class="quick-icon">＋</span><span><b>Buat pemesanan</b><small>Pilih buku dan simpan transaksi</small></span><i>→</i></a>
+        <a class="quick-link" href="tracking.html"><span class="quick-icon">⌁</span><span><b>Lacak pengiriman</b><small>Pantau status nomor DO</small></span><i>→</i></a>
+    </article>
+</section>
+<section class="content-card recent-card" id="history">
+    <div class="section-heading"><div><span class="eyebrow">AKTIVITAS TERBARU</span><h2>Riwayat transaksi</h2></div><a class="inline-link" href="checkout.html">Pesanan baru →</a></div>
+    <div class="table-wrap"><table><thead><tr><th>NOMOR PESANAN</th><th>PELANGGAN</th><th>TANGGAL</th><th>TOTAL</th><th>STATUS</th></tr></thead><tbody id="recentOrders"><tr><td colspan="5" class="empty-cell">Belum ada transaksi.</td></tr></tbody></table></div>
+</section>
+<footer class="page-footer">Bookspace © 2026 <span>Data simulasi tersimpan pada browser</span></footer>
+</main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>

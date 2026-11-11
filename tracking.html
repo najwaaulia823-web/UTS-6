@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tracking • Bookspace</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="app-shell">
+<aside class="sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark">B</span> bookspace</a>
+    <span class="side-label">MENU UTAMA</span>
+    <nav class="side-nav">
+        <a href="dashboard.html" data-page="dashboard">▦ <span>Dashboard</span></a>
+        <a href="stok.html" data-page="stok">▤ <span>Stok &amp; Katalog</span></a>
+        <a href="checkout.html" data-page="checkout">＋ <span>Pemesanan</span></a>
+        <a href="tracking.html" data-page="tracking">⌁ <span>Tracking</span></a>
+        <a href="dashboard.html#history">◷ <span>Riwayat transaksi</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+        <div class="help-card"><b>Bookspace support</b><p>Kelola koleksi dan pantau pengiriman buku dengan mudah.</p></div>
+        <button class="logout" data-logout>↪ Keluar akun</button>
+    </div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+    <div><span class="eyebrow">BOOKSPACE / ADMINISTRATOR</span><p class="muted small">Sistem informasi katalog dan pemesanan buku</p></div>
+    <div class="user-chip"><span class="avatar">A</span><span><b id="currentUser">Admin Bookspace</b><small>Administrator</small></span></div>
+</header>
+<section class="page-intro"><div><span class="eyebrow">ORDER TRACKING</span><h1>Lacak paketmu</h1><p class="muted">Masukkan nomor Delivery Order untuk melihat detail pengiriman.</p></div></section>
+<section class="tracking-search content-card">
+    <div class="tracking-icon">⌁</div>
+    <div class="tracking-search-content"><h2>Nomor Delivery Order</h2><p class="muted">Contoh nomor: <b>20230012</b></p>
+        <form id="trackingForm" class="track-form"><input id="deliveryInput" required placeholder="Masukkan nomor DO" aria-label="Nomor Delivery Order"><button class="btn btn-primary" type="submit">Cari paket →</button></form>
+    </div>
+</section>
+<section id="trackingResult" class="tracking-result" hidden></section>
+<section class="content-card demo-orders"><div class="section-heading"><div><span class="eyebrow">COBA FITUR TRACKING</span><h2>Nomor DO demo</h2></div></div>
+    <div class="demo-chips">
+        <button type="button" data-do="20230012">20230012 · Dalam perjalanan</button>
+        <button type="button" data-do="20230013">20230013 · Selesai antar</button>
+    </div>
+</section>
+<footer class="page-footer">Bookspace © 2026 <span>Status pengiriman merupakan data simulasi</span></footer>
+</main></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>
